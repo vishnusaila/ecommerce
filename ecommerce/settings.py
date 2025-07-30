@@ -33,6 +33,9 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 
 ALLOWED_HOSTS = ['web-production-129cc.up.railway.app', '127.0.0.1', 'localhost']
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-129cc.up.railway.app',
+]
  # OR later replace with Railway domain
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -50,6 +53,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

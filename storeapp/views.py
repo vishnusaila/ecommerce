@@ -137,6 +137,8 @@ def profile_view(request):
 
 
 
-def test_session(request):
-    request.session['test'] = 'ok'
+from django.http import HttpResponse
+
+def test_session_view(request):
+    request.session['test'] = True  # Set a test session value
     return HttpResponse("Session working!" if request.session.get('test') else "Session failed!")
