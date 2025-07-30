@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-q9j5^!11)72alf!lyn1w44#ul1&4l8q0%xi3n+nkg%b%1n=&22
 # SECURITY WARNING: don't run with debug turned on in production!
 # settings.py
 
-DEBUG = False
+DEBUG = True
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-dev-key')
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
@@ -152,5 +152,7 @@ LOGOUT_REDIRECT_URL = '/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
+# For handling uploaded media files (future-ready)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
