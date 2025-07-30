@@ -156,3 +156,17 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+
+# ✅ Required for Railway domain to be trusted for CSRF
+CSRF_TRUSTED_ORIGINS = ['https://web-production-129cc.up.railway.app']
+
+# ✅ Required if you're using HTTPS on Railway
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+# ✅ Use database-backed sessions
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
+# ✅ Whitenoise for serving static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

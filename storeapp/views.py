@@ -134,3 +134,9 @@ def registration_success(request):
 def profile_view(request):
     orders = Order.objects.filter(name=request.user.username).order_by('-id')
     return render(request, 'store/profile.html', {'orders': orders})
+
+
+
+def test_session(request):
+    request.session['test'] = 'ok'
+    return HttpResponse("Session working!" if request.session.get('test') else "Session failed!")
