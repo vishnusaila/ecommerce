@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-q9j5^!11)72alf!lyn1w44#ul1&4l8q0%xi3n+nkg%b%1n=&22
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']  # OR later replace with Railway domain
+ALLOWED_HOSTS = ['https://web-production-129cc.up.railway.app/']  # OR later replace with Railway domain
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
