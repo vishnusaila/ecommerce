@@ -31,9 +31,10 @@
                 <h4 class="text-success">₹ {{ product.price }}</h4>
                 <p class="mt-4">{{ product.description }}</p>
                 <form method="POST" action="{% url 'add_to_cart' product.id %}">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-success">Add to Cart</button>
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success">Add to Cart</button>
                 </form>
+
             </div>
         </div>
 
