@@ -25,27 +25,28 @@
 <div class="container mt-5">
     <h2 class="text-center mb-4">🪵 ShopSmart – Your Destination for Wooden Elegance</h2>
     <div class="row">
-
         {% for product in products %}
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow-sm">
-                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                <img src="{{ product.image }}" class="card-img-top" alt="{{ product.name }}">
                 <div class="card-body text-center">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text text-muted">{{ product.description|truncatechars:100 }}</p>
                     <h6 class="text-success">₹ {{ product.price }}</h6>
                     <div class="d-flex justify-content-between">
                         <a href="{% url 'product_detail' product.pk %}" class="btn btn-primary mt-2">View More</a>
-                        <a href="{% url 'cart_view' %}" class="btn btn-warning mt-2">🛒 View Cart</a>
+                        <a href="{% url 'add_to_cart' product.pk %}" class="btn btn-warning mt-2">🛒 Add to Cart</a>
                     </div>
                 </div>
             </div>
         </div>
+        {% empty %}
+        <p class="text-center text-danger">No products available.</p>
         {% endfor %}
-
     </div>
 </div>
 {% endblock %}
+
 
 
 </body>

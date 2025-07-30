@@ -3,10 +3,9 @@ from .models import Product, Order, OrderItem
 from django.contrib.auth import logout
 from django.conf import settings
 import razorpay
-from storeapp.models import Product
-# -------------------------
-# Home Page
-# -------------------------
+from django.shortcuts import render
+from .models import Product
+
 def home(request):
     products = Product.objects.all()
     return render(request, 'store/home.html', {'products': products})
