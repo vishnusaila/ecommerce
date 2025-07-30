@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+  .register-box {
+    max-width: 450px;
+    margin: 50px auto;
+    border: 1px solid #dbdbdb;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .register-header {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #262626;
+  }
+
+  .register-box input {
+    width: 100%;
+    padding: 12px 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .register-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .register-box button:hover {
+    background-color: #218838;
+  }
+
+  .login-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .login-link a {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="register-box">
+  <div class="register-header">Create an Account</div>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+  </form>
+
+  <div class="login-link">
+    Already have an account? <a href="{% url 'login' %}">Log in here</a>
+  </div>
+</div>
+{% endblock %}

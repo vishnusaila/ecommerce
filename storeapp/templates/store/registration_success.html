@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 400px; border: 1px solid #ddd; padding: 30px; border-radius: 10px; background-color: #fdfdfd;">
+  <h3 class="text-center mb-4">🔐 Login to ShopSmart</h3>
+
+  <form method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" class="form-control mb-3" placeholder="Username" required>
+    <input type="password" name="password" class="form-control mb-3" placeholder="Password" required>
+    <button type="submit" class="btn btn-primary btn-block">Login</button>
+  </form>
+
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-info mt-3">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+
+  <div class="text-center mt-4">
+    <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+  </div>
+
+  <div class="text-center mt-3">
+    <p class="text-success">🎉 Just registered? <a href="{% url 'login' %}">Log in here</a></p>
+  </div>
+</div>
+{% endblock %}

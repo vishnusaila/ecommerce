@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <h3 class="mb-4">👤 Welcome, {{ user.username }}</h3>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+
+  <hr>
+  <h4>🧾 Your Orders</h4>
+  {% if orders %}
+    <ul class="list-group">
+      {% for order in orders %}
+        <li class="list-group-item">
+          <strong>Order ID:</strong> {{ order.id }} |
+          <strong>Address:</strong> {{ order.address }} |
+          <strong>Phone:</strong> {{ order.phone }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="text-muted">No orders found.</p>
+  {% endif %}
+</div>
+{% endblock %}

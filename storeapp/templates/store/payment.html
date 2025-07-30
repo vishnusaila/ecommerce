@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Razorpay Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        .pay {
+            display: flex;
+            justify-content: center;
+            
+            text-align: center;
+            
+        }
+       
+        
+    </style>
+</head>
+<body>
+    
+
+    <div class="pay">
+    <h1><a href="/" class="btn btn-outline-secondary mt-3">← Continue Shopping</a></h1>
+
+    </div>
+    <div style="text-align: center; margin-top: 100px;">
+        <h2>🧾 Order Amount: ₹{{ total }}</h2>
+        <button id="pay" style="padding: 10px 20px; font-size: 18px;">Pay Now</button>
+    </div>
+
+    <script>
+        var options = {
+            "key": "{{ key }}",
+            "amount": "{{ payment.amount }}",
+            "currency": "INR",
+            "name": "ShopSmart",
+            "description": "Test Payment",
+            "order_id": "{{ payment.id }}",
+            "handler": function (response){
+                alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                window.location.href = "/";
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+
+        var rzp = new Razorpay(options);
+
+        document.getElementById('pay').onclick = function(e){
+            rzp.open();
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>
