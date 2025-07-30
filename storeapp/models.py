@@ -10,15 +10,19 @@ class Category(models.Model):
         return self.name
 
 
+from django.db import models
+from django.utils import timezone
+
 class Product(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     price = models.FloatField()
-    image = models.ImageField(upload_to='products/')
+    image = models.URLField()  # ✅ Changed from ImageField to URLField
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.name
+
 
 
 
