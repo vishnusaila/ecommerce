@@ -7,15 +7,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-dev-key')
 
 DEBUG = False
-
-# ⚡ Render domain in ALLOWED_HOSTS
 ALLOWED_HOSTS = ['ecommerce-dazi.onrender.com']
-
-# ✅ CSRF trusted origins for Render with HTTPS
 CSRF_TRUSTED_ORIGINS = ['https://ecommerce-dazi.onrender.com']
-
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
+
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
