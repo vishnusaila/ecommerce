@@ -173,13 +173,10 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 # ✅ Whitenoise for serving static files
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' change all to render 
-import os
-
-# Other settings ...
+ALLOWED_HOSTS = ['ecommerce-dazi.onrender.com']
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Use WhiteNoise for static file handling in production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
