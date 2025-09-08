@@ -32,9 +32,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-dev-key')
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 
-ALLOWED_HOSTS = ['web-production-129cc.up.railway.app', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['https://ecommercee-l4n8.onrender.com/']
 CSRF_TRUSTED_ORIGINS = [
-    'https://web-production-129cc.up.railway.app',
+    'https://ecommercee-l4n8.onrender.com/',
 ]
  # OR later replace with Railway domain
 
