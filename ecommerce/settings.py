@@ -32,7 +32,11 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-dev-key')
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['ecommerce-dazi.onrender.com']
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
  # OR later replace with Railway domain
