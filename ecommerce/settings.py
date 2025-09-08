@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-dev-key')
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 
-ALLOWED_HOSTS = ['ecommerce-dazi.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
